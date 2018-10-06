@@ -1,22 +1,20 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from django.contrib.auth import login, logout
+from django.contrib.auth import login, logout, authenticate
 from django.views.generic import RedirectView
 from django.urls import reverse_lazy, reverse
-from django.contrib.auth.forms import AuthenticationForm
 
-from .forms import UserRegistrationForm
+from .forms import UserRegistrationForm, UserLoginForm
 
 
 def logout_view(request):
     logout(request)
-    print(reverse('accounts:home'))
     return redirect(reverse('accounts:home'))
 
 
 class StudentLoginView(View):
     template_name = 'login.html'
-    form_class = AuthenticationForm
+    form_class = UserLoginForm
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()
@@ -25,7 +23,9 @@ class StudentLoginView(View):
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
         if form.is_valid():
-            user = form.get_user()
+            email = request.POST['email']
+            password = request.POST['password']
+            user = authenticate(request, username=email, password=password)
             login(request, user)
             return redirect('accounts:home')
 
