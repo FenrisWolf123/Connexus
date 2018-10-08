@@ -13,12 +13,13 @@ def logout_view(request):
 
 
 class StudentLoginView(View):
-    template_name = 'login.html'
+    template_name = 'form.html'
     form_class = UserLoginForm
+    message = 'Sign in with'
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()
-        return render(request, self.template_name, {'form': form, 'test': None})
+        return render(request, self.template_name, {'form': form, 'message': self.message})
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -29,16 +30,17 @@ class StudentLoginView(View):
             login(request, user)
             return redirect('accounts:home')
 
-        return render(request, self.template_name, {'form': form, 'test': 'hello'})
+        return render(request, self.template_name, {'form': form, 'message': self.message})
 
 
 class StudentRegistrationView(View):
-    template_name = 'register.html'
+    template_name = 'form.html'
     form_class = UserRegistrationForm
+    message = 'Register'
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()
-        return render(request, self.template_name, {'form': form})
+        return render(request, self.template_name, {'form': form, 'message': self.message})
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -49,4 +51,4 @@ class StudentRegistrationView(View):
             login(request, user)
             return redirect('accounts:home')
 
-        return render(request, self.template_name, {'form': form})
+        return render(request, self.template_name, {'form': form, 'message': self.message})
