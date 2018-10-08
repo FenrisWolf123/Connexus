@@ -27,7 +27,11 @@ class StudentLoginView(View):
             email = request.POST['email']
             password = request.POST['password']
             user = authenticate(request, username=email, password=password)
-            login(request, user)
+            if user is not None:
+                login(request, user)
+            else:
+                form.add_error('email', 'Wrong email or/and password')
+                return render(request, self.template_name, {'form': form, 'message': self.message})
             return redirect('accounts:home')
 
         return render(request, self.template_name, {'form': form, 'message': self.message})

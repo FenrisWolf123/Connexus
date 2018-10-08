@@ -11,7 +11,6 @@
                     <div class="text-muted text-center mb-3">
                         <small>{{ message }}</small>
                     </div>
-
                     <form role="form" method="POST">
                         {% csrf_token %}
                         {% for field in form %}
@@ -44,5 +43,49 @@
             </div>
         </div>
     </div>
+</div>
+<div>
+    {% if form.errors %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="position: fixed; z-index: 100; bottom : 2vh; left: 5%; right: 5%;">
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        <span class="alert-inner--icon"><i class="fa fa-exclamation-circle"></i></span>
+        <span class="alert-inner--text"><strong>{{ error }}</strong></span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <br/>
+        {% endfor %}
+        {% endif %}
+
+        {% for field in form.hidden_fields %}
+        {% if field.errors %}
+        {% for error in field.error %}
+        <span class="alert-inner--icon"><i class="fa fa-exclamation-circle"></i></span>
+        <span class="alert-inner--text"><strong>{{ error }}</strong></span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <br/>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+
+        {% for field in form.visible_fields %}
+        {% if field.errors %}
+        {% for error in field.error %}
+        <span class="alert-inner--icon"><i class="fa fa-exclamation-circle"></i></span>
+        <span class="alert-inner--text"><strong>{{ error }}</strong></span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <br/>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% else %}
+    <h1>hello</h1>
+    {% endif %}
 </div>
 {% endblock content %}
