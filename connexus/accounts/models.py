@@ -69,7 +69,7 @@ class StudentInfo(models.Model):
     SECTION_CHOICES = list(zip(SECTIONS, SECTIONS))
 
     user = models.OneToOneField(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True
     )
     admission_number = models.IntegerField(null=True)
     house = models.CharField(max_length=1, choices=HOUSE_CHOICES)
