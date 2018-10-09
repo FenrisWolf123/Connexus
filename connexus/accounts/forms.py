@@ -10,7 +10,7 @@ class UserRegistrationForm(UserCreationForm):
         label='email',
         widget=forms.EmailInput(
             attrs={
-                'class': 'form-control',
+                'class': 'form-control form-control-alternative',
                 'placeholder': 'Email',
             }
         ),
@@ -20,7 +20,7 @@ class UserRegistrationForm(UserCreationForm):
         label='password1',
         widget=forms.PasswordInput(
             attrs={
-                'class': 'form-control',
+                'class': 'form-control form-control-alternative',
                 'placeholder': 'Password',
             }
         )

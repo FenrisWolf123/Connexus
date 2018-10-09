@@ -1,6 +1,7 @@
 {% extends 'form_base.html' %}
 {% load static %}
 {% load dict_access %}
+{% load widget_tweaks %}
 
 {% block content %}
 <div class="container pt-lg-md">
@@ -13,16 +14,18 @@
                     </div>
                     <form role="form" method="POST">
                         {% csrf_token %}
+                        {% with WIDGET_ERROR_CLASS='is-invalid' %}
                         {% for field in form %}
                         <div class="form-group mb-3">
                             <div class="input-group input-group-alternative">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="{{ form.icons|hash:field.label }}"></i></span>
                                 </div>
-                                {{ field }}
+                                {% render_field field %}
                             </div>
                         </div>
                         {% endfor %}
+                        {% endwith %}
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary my-4">Sign in</button>
                         </div>
@@ -48,44 +51,26 @@
     {% if form.errors %}
     <div class="alert alert-warning alert-dismissible fade show" role="alert" style="position: fixed; z-index: 100; bottom : 2vh; left: 5%; right: 5%;">
         {% if form.non_field_errors %}
-        {% for error in form.non_field_errors %}
+        {% for error in field.non_field_errors %}
         <span class="alert-inner--icon"><i class="fa fa-exclamation-circle"></i></span>
-        <span class="alert-inner--text"><strong>{{ error }}</strong></span>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        <span class="alert-inner--text"><strong>{{error}}</strong></span>
         <br/>
         {% endfor %}
         {% endif %}
-
-        {% for field in form.hidden_fields %}
+        
+        {% for field in form %}
         {% if field.errors %}
-        {% for error in field.error %}
+        {% for error in field.errors %}
         <span class="alert-inner--icon"><i class="fa fa-exclamation-circle"></i></span>
-        <span class="alert-inner--text"><strong>{{ error }}</strong></span>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        <span class="alert-inner--text"><strong>{{error}}</strong></span>
         <br/>
         {% endfor %}
         {% endif %}
         {% endfor %}
-
-        {% for field in form.visible_fields %}
-        {% if field.errors %}
-        {% for error in field.error %}
-        <span class="alert-inner--icon"><i class="fa fa-exclamation-circle"></i></span>
-        <span class="alert-inner--text"><strong>{{ error }}</strong></span>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
-        <br/>
-        {% endfor %}
-        {% endif %}
-        {% endfor %}
     </div>
-    {% else %}
-    <h1>hello</h1>
     {% endif %}
 </div>
 {% endblock content %}

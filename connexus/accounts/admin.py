@@ -22,7 +22,8 @@ class UserCreationForm(forms.ModelForm):
         email = self.cleaned_data.get('email')
         qs = User.objects.filter(email=email)
         if qs.exists():
-            raise forms.ValidationError("email is taken")
+            raise forms.ValidationError(
+                {'email': ['This email is already in use.']})
         return email
 
     def clean_password2(self):
@@ -30,7 +31,9 @@ class UserCreationForm(forms.ModelForm):
         password1 = self.cleaned_data.get("password1")
         password2 = self.cleaned_data.get("password2")
         if password1 and password2 and password1 != password2:
-            raise forms.ValidationError("Passwords don't match")
+            raise forms.ValidationError(
+                {'password1': ['The passwords don\'t match']}
+            )
         return password2
 
     def save(self, commit=True):
