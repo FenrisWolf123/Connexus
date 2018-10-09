@@ -1,9 +1,9 @@
 # Connexus
 ## TODO:
-- [] Blog
-- [] QnA
+- [ ] Blog
+- [ ] QnA
 - [x] Student Registration
-- [] Calender
-- [] Event registration
-- [] House Points
-- [] Alumni (maybe)
+- [ ] Calender
+- [ ] Event registration
+- [ ] House Points
+- [ ] Alumni (maybe)
