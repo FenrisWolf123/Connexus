@@ -2,6 +2,7 @@
 {% load static %}
 {% load dict_access %}
 {% load widget_tweaks %}
+{% load typeof %}
 
 {% block content %}
 <div class="container pt-lg-md">
@@ -14,18 +15,29 @@
                     </div>
                     <form role="form" method="POST">
                         {% csrf_token %}
-                        {% with WIDGET_ERROR_CLASS='is-invalid' %}
                         {% for field in form %}
                         <div class="form-group mb-3">
                             <div class="input-group input-group-alternative">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="{{ form.icons|hash:field.label }}"></i></span>
                                 </div>
-                                {% render_field field %}
+                                {% render_field field class+='form-control form-control-alternative'%}
                             </div>
                         </div>
                         {% endfor %}
-                        {% endwith %}
+
+                        {% if form2 %}
+                        {% for field in form2 %}
+                        <div class="form-group mb-3">
+                            <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="{{ form2.icons|hash:field.label }}"></i></span>
+                                </div>
+                                {% render_field field class+='form-control form-control-alternative'%}
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary my-4">Sign in</button>
                         </div>
@@ -48,7 +60,7 @@
     </div>
 </div>
 <div>
-    {% if form.errors %}
+    {% if form.errors or form2.errors%}
     <div class="alert alert-warning alert-dismissible fade show" role="alert" style="position: fixed; z-index: 100; bottom : 2vh; left: 5%; right: 5%;">
         {% if form.non_field_errors %}
         {% for error in field.non_field_errors %}
@@ -67,10 +79,35 @@
         {% endfor %}
         {% endif %}
         {% endfor %}
+
+        {% if form2 %}
+        {% if form2.non_field_errors %}
+        {% for error in field.non_field_errors %}
+        <span class="alert-inner--icon"><i class="fa fa-exclamation-circle"></i></span>
+        <span class="alert-inner--text"><strong>{{error}}</strong></span>
+        <br/>
+        {% endfor %}
+        {% endif %}
+        
+        {% for field in form2 %}
+        {% if field.errors %}
+        {% for error in field.errors %}
+        <span class="alert-inner--icon"><i class="fa fa-exclamation-circle"></i></span>
+        <span class="alert-inner--text"><strong>{{error}}</strong></span>
+        <br/>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        
+        
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
+    {% endif %}
+    {% if form2 %}
+    
     {% endif %}
 </div>
 {% endblock content %}

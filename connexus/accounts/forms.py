@@ -10,7 +10,6 @@ class UserRegistrationForm(UserCreationForm):
         label='email',
         widget=forms.EmailInput(
             attrs={
-                'class': 'form-control form-control-alternative',
                 'placeholder': 'Email',
             }
         ),
@@ -20,7 +19,6 @@ class UserRegistrationForm(UserCreationForm):
         label='password1',
         widget=forms.PasswordInput(
             attrs={
-                'class': 'form-control form-control-alternative',
                 'placeholder': 'Password',
             }
         )
@@ -30,7 +28,6 @@ class UserRegistrationForm(UserCreationForm):
         label='password1',
         widget=forms.PasswordInput(
             attrs={
-                'class': 'form-control',
                 'placeholder': 'Confirm Password',
             }
         )
@@ -43,12 +40,26 @@ class UserRegistrationForm(UserCreationForm):
     }
 
 
+class UserInfoRegistrationForm(forms.Form):
+    admission_number = forms.IntegerField(
+        label='admission_number',
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Admssion number'
+            }
+        )
+    )
+
+    icons = {
+        'admission_number': 'ni ni-lock-circle-open'
+    }
+
+
 class UserLoginForm(forms.Form):
     email = forms.EmailField(
         label='email',
         widget=forms.EmailInput(
             attrs={
-                'class': 'form-control',
                 'placeholder': 'Email',
             }
         ),
@@ -57,7 +68,6 @@ class UserLoginForm(forms.Form):
         label='password',
         widget=forms.PasswordInput(
             attrs={
-                'class': 'form-control',
                 'placeholder': 'Password',
             }
         )
