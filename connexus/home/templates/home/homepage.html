@@ -1,0 +1,395 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Project Connexus</title>
+  <!-- Favicon -->
+  <link href="{% static '/assets/img/brand/favicon.png' %}" rel="icon" type="image/png">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="{% static '/assets/vendor/nucleo/css/nucleo.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <!-- Argon CSS -->
+  <link type="text/css" href="{% static '/assets/css/argon.css' %}" rel="stylesheet">
+  <!-- Docs CSS -->
+  <link type="text/css" href="{% static '/assets/css/docs.min.css' %}" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="{% static 'extra/Slicebox/css/slicebox.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'extra/Slicebox/css/demo.css' %}" />
+  <script type="text/javascript" src="{% static 'extra/Slicebox/js/modernizr.custom.46884.js' %}"></script>  
+  <link href="{% static 'extra/Cards/cards.css" rel="stylesheet' %}">
+</head>
+
+<body>    
+
+  <header class="header-global">
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light">
+      <div class="container">
+        <a class="navbar-brand mr-lg-5" href="./index.html">
+          <img src="{% static 'assets/img/brand/white.png' %}">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="./index.html">
+                  <img src="{% static 'assets/img/brand/blue.png' %}">
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+            <li>
+              <a href="#" class="nav-link" style="color: white; padding-left: 15px; padding-right: 15px;">
+                <i class="ni ni-ui-04 d-lg-none"></i>
+                <span class="nav-link-inner--text">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="examples/blog.html" class="nav-link" style="color: white; padding-left: 15px; padding-right: 15px;">
+                <i class="ni ni-collection d-lg-none"></i>
+                <span class="nav-link-inner--text">Student Blog</span>
+              </a>
+            </li>
+            <li>
+              <a href="examples/events.html" class="nav-link" style="color: white; padding-left: 15px; padding-right: 15px;">
+                <i class="ni ni-collection d-lg-none"></i>
+                <span class="nav-link-inner--text">Events</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" style="color: white; padding-left: 15px; padding-right: 15px;">
+                <i class="ni ni-collection d-lg-none"></i>
+                <span class="nav-link-inner--text">My House</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" style="color: white; padding-left: 15px; padding-right: 15px;">
+                <i class="ni ni-collection d-lg-none"></i>
+                <span class="nav-link-inner--text">My Account</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="position-relative" >
+      <section class="section-hero section-shaped my-0" style="background-image: linear-gradient(to bottom right, purple, black);">
+        <div class="shape shape-style-1 shape-primary" >
+          <span class="span-150"></span>
+          <span class="span-50"></span>
+          <span class="span-50"></span>
+          <span class="span-75"></span>
+          <span class="span-100"></span>
+          <span class="span-75"></span>
+          <span class="span-50"></span>
+          <span class="span-100"></span>
+          <span class="span-50"></span>
+          <span class="span-100"></span>
+        </div>        
+          <div class="box sixteen-nine">
+            <div class="content">
+              <div class="sliceboxwrapper">
+                <ul id="sb-slider" class="sb-slider">
+                  <li>
+                    <a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank"><img src="{% static 'extra/Slicebox/images/1.jpg' %}" alt="image1"/></a>
+                  </li>
+                  <li>
+                    <a href="http://www.flickr.com/photos/strupler/2968268187" target="_blank"><img src="{% static 'extra/Slicebox/images/2.jpg' %}" alt="image2"/></a>
+                  </li>
+                  <li>
+                    <a href="http://www.flickr.com/photos/strupler/2968114825" target="_blank"><img src="{% static 'extra/Slicebox/images/3.jpg' %}" alt="image1"/></a>
+                  </li>
+                  <li>
+                    <a href="http://www.flickr.com/photos/strupler/2968122059" target="_blank"><img src="{% static 'extra/Slicebox/images/4.jpg' %}" alt="image1"/></a>
+                  </li>
+                  <li>
+                    <a href="http://www.flickr.com/photos/strupler/2969119944" target="_blank"><img src="{% static 'extra/Slicebox/images/5.jpg' %}" alt="image1"/></a>
+                  </li>
+                  <li>
+                    <a href="http://www.flickr.com/photos/strupler/2968126177" target="_blank"><img src="{% static 'extra/Slicebox/images/6.jpg' %}" alt="image1"/></a>
+                  </li>
+                  <li>
+                    <a href="http://www.flickr.com/photos/strupler/2968945158" target="_blank"><img src="{% static 'extra/Slicebox/images/7.jpg' %}" alt="image1"/></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="width ratio16-9">
+            <div class="contenido">
+              <div class="container shape-container d-flex align-items-center" style="justify-content: center;">          
+                <div class="col px-0">
+                </div>
+              </div>  
+            </div>
+          </div>
+       	</div>  
+      </section>
+    </div>
+    <section class="section section-lg">
+      <div class="container">
+        <div class="row row-grid align-items-center">
+          <div class="col-md-6 order-md-2">
+            <img src="{% static 'assets/img/theme/promo-1.png' %}" class="img-fluid floating">
+          </div>
+          <div class="col-md-6 order-md-1">
+            <div class="pr-md-5">
+              <div class="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5" style="background-color: transparent;">
+                <i class="ni ni-book-bookmark" style="color: black;"></i>
+              </div>
+              <h3>STUDENT BLOG CORNUCOPIA</h3>
+              <p>WE PRESENT TO YOU THE BLOG OF OUR VERY OWN STUDENTS.</p>
+              <a href="#" style="color: black;">Vist Student blog</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section bg-secondary">
+      <div class="container">
+        <div class="row row-grid align-items-center">
+          <div class="col-md-6">
+            <div class="card bg-default shadow border-0">
+              <img src="{% static 'assets/img/theme/img-1-1200x1000.jpg' %}" class="card-img-top">
+              <blockquote class="card-blockquote">
+                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="svg-bg">
+                  <polygon points="0,52 583,95 0,95" class="fill-default" />
+                  <polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default" />
+                </svg>
+                <h4 class="display-3 font-weight-bold text-white">Event System</h4>
+                <p class="lead text-italic text-white">Every once in a while, the school is invited by other schools to send students to participate in quality events, which provide exposure and memories to the students taking part in it!</p>
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pl-md-5">
+              <div class="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5" style="background-color: transparent;">
+                <i class="ni ni-calendar-grid-58" style="color: #fb6340;"></i>
+              </div>
+              <h3>EVENT CALENDAR</h3>
+              <p class="lead">The Event Calendar is where all the Events are placed in an organised calendar with the event placed on its respective date.</p>
+              <a href="examples/events.html" class="font-weight-bold text-warning mt-5">Vist Event Calendar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section section-shaped my-0 overflow-hidden" style="padding-bottom: 8rem;">
+      <div class="shape shape-style-1 bg-gradient-warning shape-skew">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="container py-0">
+        <div class="row row-grid align-items-center">
+          <div class="col-md-6 order-lg-2 ml-lg-auto">
+            <div class="position-relative pl-md-5">
+              <img src="{% static 'assets/img/ill/ill-2.svg' %}" class="img-center img-fluid floating">
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="d-flex px-3">
+              <div>
+                <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                  <i class="ni ni-building text-primary"></i>
+                </div>
+              </div>
+              <div class="pl-4">
+                <h4 class="display-3 text-white">MY HOUSE</h4>
+                <p class="text-white">Each student is a part of one of four houses. The following link takes you to yours respective house page with content relevant to your house only.</p>
+                <a href="#" style="color: white;">Visit My House Page</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section-lg">      
+      <div class="container">
+        <div class="row justify-content-center">
+          <h2>ANNOUNCEMENTS</h2>
+          <p style="padding-left: 10px; padding-right: 10px;"><br/>Here, you will see all the latest and upcoming events in a brief tile based system to all easy and quick access.<br/>
+             Well, what are you waiting for?! Click on one of those boxes and read up about the events of our very own school's students.<br/><br/></p>
+          <div class="col-lg-12">
+            <div class="row row-grid">
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">
+                  <img src="{% static 'images/pic04.jpg' %}" style="width: 100%; -moz-border-radius: 5px; background: #fff; border-radius: 5px;">
+                  <div class="card-body py-5">
+                    <h6 class="text-primary text-uppercase">INTERSCHOOL MUN</h6>
+                    <p class="description mt-3">MUN, JULY 2017 NPS HSR hosted its inaugural MUN on 21 and 22 July 2017.</p>
+                    <a href="#" class="btn btn-primary mt-4">Learn more</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">                  
+                  <img src="{% static 'images/pic05.jpg' %}" style="width: 100%; -moz-border-radius: 5px; background: #fff; border-radius: 5px;">
+                  <div class="card-body py-5">
+                    <h6 class="text-success text-uppercase">LIT FEST</h6>
+                    <p class="description mt-3">National Public School has added yet another feather to its cap of achievements with its maiden inter-school literature fest- ‘Lit Up’.</p>
+                    <a href="#" class="btn btn-success mt-4">Learn more</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">
+                  <img src="{% static 'images/pic06.jpg' %}" style="width: 100%; -moz-border-radius: 5px; background: #fff; border-radius: 5px;">
+                  <div class="card-body py-5">
+                    <h6 class="text-warning text-uppercase">INCEPTRA</h6>
+                    <p class="description mt-3">National Public School, HSR Layout, hosted its maiden commerce fest ‘Inceptra’ on 28 July 2017.</p>
+                    <a href="#" class="btn btn-warning mt-4">Learn more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section-lg pt-0">
+      <div class="container">
+        <div class="card bg-gradient-warning shadow-lg border-0">
+          <div class="p-5">
+            <div class="row align-items-center">
+              <div class="col-lg-8">
+                <h3 class="text-white">MY ACCOUNT</h3>
+                <p class="lead text-white mt-3">You can customize your account here. All account details pertaining to you, such as, which house you belong to, your current registration number, etc. will be displayed here.</p>
+              </div>
+              <div class="col-lg-3 ml-lg-auto">
+                <a href="#" class="btn btn-lg btn-block btn-white">Visit My Account</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer has-cards">
+    <div class="container container-lg">
+      <div class="row">
+        <div class="col-md-6 mb-5 mb-md-0">
+          <div class="card card-lift--hover shadow border-0">
+            <a href="./examples/landing.html" title="Landing Page">
+              <img src="{% static 'assets/img/theme/landing.jpg' %}" class="card-img">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 mb-5 mb-lg-0">
+          <div class="card card-lift--hover shadow border-0">
+            <a href="./examples/profile.html" title="Profile Page">
+              <img src="{% static 'assets/img/theme/profile.jpg' %}" class="card-img">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <hr>
+      <div class="row align-items-center justify-content-md-between">
+        <div class="col-md-6">
+          <div class="copyright">
+            &copy; 2018
+            <a href="#" target="_blank">NPS HSR</a> | <i class="fa fa-code" aria-hidden="true"></i> with ❤ by Bhargav And Nikhil
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ul class="nav nav-footer justify-content-end">
+            <li class="nav-item">
+              <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Core -->
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/popper/popper.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/headroom/headroom.min.js' %}"></script>
+  <!-- Optional JS -->
+  <script src="{% static 'assets/vendor/onscreen/onscreen.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/nouislider/js/nouislider.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
+  <!-- Argon JS -->
+  <script src="{% static 'assets/js/argon.js' %}"></script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'extra/Slicebox/js/jquery.slicebox.js' %}"></script>
+    <script type="text/javascript">
+      $(function() {
+        var Page = (function() {
+          var $navArrows = $( '#nav-arrows' ).hide(),
+            $navDots = $( '#nav-dots' ).hide(),
+            $nav = $navDots.children( 'span' ),
+            $shadow = $( '#shadow' ).hide(),
+            slicebox = $( '#sb-slider' ).slicebox( {
+              onReady : function() {
+                $navArrows.show();
+                $navDots.show();
+                $shadow.show();
+              },
+              onBeforeChange : function( pos ) {
+                $nav.removeClass( 'nav-dot-current' );
+                $nav.eq( pos ).addClass( 'nav-dot-current' );
+              }
+            } ),            
+            init = function() {
+              initEvents();             
+            },
+            initEvents = function() {
+              setInterval(function(){
+                    slicebox.next();
+                return false;
+                },5000);
+              // add navigation events
+              $navArrows.children( ':first' ).on( 'click', function() {
+                slicebox.next();
+                return false;
+              } );
+              $navArrows.children( ':last' ).on( 'click', function() {               
+                slicebox.previous();
+                return false;
+              } );
+              $nav.each( function( i ) {              
+                $( this ).on( 'click', function( event ) {                  
+                  var $dot = $( this );                  
+                  if( !slicebox.isActive() ) {
+                    $nav.removeClass( 'nav-dot-current' );
+                    $dot.addClass( 'nav-dot-current' );                  
+                  }
+                  slicebox.jump( i + 1 );
+                  return false;  
+                } );  
+              } );
+            };
+            return { init : init };
+        })();
+        Page.init();
+      });
+    </script>
+
+</body>
+
+</html>

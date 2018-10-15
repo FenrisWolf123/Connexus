@@ -1,0 +1,206 @@
+
+.cardwrapper {
+  position: relative;
+  top: 10%;
+  left: 40%;
+  width: 300px;
+  height: 500px;
+  perspective: 900px;
+}
+
+.cardcontainer {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  transition: .5s all ease;
+  transform: rotateX(60deg) scale(0.7);
+  perspective: 900px;
+  box-shadow: 0px 20px 50px #555;
+  animation: entry 1s linear 1;
+}
+
+#cardc0 {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #eba65b 30%, #d99267 100%);
+  z-index: 300;
+  box-shadow: 0px 20px 100px #555;
+}
+
+#cardc1 {
+  background: linear-gradient(to bottom, #e0009c 30%, #ff74e6 100%);
+  box-shadow: 0px 20px 100px #555;
+  left: 100%;
+  z-index: 0;
+}
+
+#cardc2 {
+  left: -100%;
+  z-index: 0;
+  background: linear-gradient(to bottom, #59476f 30%, #7b88d1 100%);
+  box-shadow: 0px 20px 100px #555;
+}
+
+.cardcontainer:hover {
+  cursor: pointer;
+  transform: rotate(0deg) scale(1) translateY(10px);
+  transition: .5s all ease;
+  z-index: 400;
+}
+
+.cardimage {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 45%;
+  background: linear-gradient(to top, #eba65b 30%, #d99267 100%);
+}
+
+#cardi1 {
+  background: linear-gradient(to bottom, #e0009c 30%, #ff74e6 100%);
+}
+
+#cardi2 {
+  background: linear-gradient(to bottom, #59476f 30%, #7b88d1 100%);
+}
+
+.cardsun {
+  position: absolute;
+  top: 50%;
+  height: 50%;
+  left: 0%;
+  width: 100%;
+}
+
+.cardsun1 {
+  width: 50px;
+  height: 50px;
+  box-shadow: 0px 0px 10px #fff;
+}
+
+.cardst4 {
+  fill: #f8c56f;
+  opacity: 1;
+}
+
+.cardst5,
+.cardst7 {
+  fill: #fff;
+}
+
+#cardsh2 {
+  opacity: 0.5;
+}
+
+#cardsh3 {
+  opacity: 0.3;
+}
+
+.cardst6 {
+  fill: #59476f;
+}
+
+.cardst10 {
+  fill: #c5a7e5;
+  stroke: #222;
+}
+
+.cardst11 {
+  stroke: #212121;
+  opacity: 0.5;
+}
+
+#cardsh1 {
+  fill: #f8c56f;
+  opacity: 0.4;
+}
+
+.cardst0 {
+  fill: #a25a62;
+  stroke: none;
+  stroke-miterlimit: 10;
+}
+
+.cardst1 {
+  fill: none;
+  stroke: #a25a62;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+
+.cardst2 {
+  fill: #cd775c;
+}
+
+.cardst3 {
+  fill: #fff;
+  opacity: 0.3;
+}
+
+.cardstory {
+  position: absolute;
+  top: 45%;
+  left: 0%;
+  height: 55%;
+  width: 100%;
+  background: linear-gradient(to bottom, #eba65b 0%, #d99267 40%);
+  z-index: 30;
+}
+
+#cards1 {
+  background: linear-gradient(to top, #fff 0%, #fff 100%);
+}
+
+#cards2 {
+  background: linear-gradient(to top, #5b62a2 0%, #7b88d1 120%);
+}
+
+.cardinfo {
+  position: absolute;
+  top: 10%;
+}
+
+.cardpage {
+  position: absolute;
+  top: 80%;
+  width: 100%;
+  left: 0%;
+  height: 20%;
+  z-index: 30;
+}
+
+@keyframes simple {
+  50% {
+    transform: translateX(10px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+}
+
+@keyframes simple1 {
+  50% {
+    transform: translateX(-10px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+}
+
+@keyframes entry {
+  0% {
+    top: -20%;
+    opacity: 0.1;
+  }
+  100% {
+    top: 0%;
+  }
+}

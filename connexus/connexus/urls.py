@@ -19,5 +19,6 @@ from django.urls import path, include
 app_name = 'connexus'
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('accounts.urls')),
+    path('', include('home.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
